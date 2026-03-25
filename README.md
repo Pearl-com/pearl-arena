@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.pearl.com/api"><img alt="Pearl API" src="https://img.shields.io/badge/Pearl_API-docs-6366F1?style=for-the-badge"></a>
+  <a href="https://www.pearl.com/api/docs"><img alt="Pearl API" src="https://img.shields.io/badge/Pearl_API-docs-6366F1?style=for-the-badge"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-22C55E?style=for-the-badge"></a>
 </p>
 
@@ -80,16 +80,6 @@ See [`src/lib/pearl-api.ts`](src/lib/pearl-api.ts) for the full implementation.
       <sub><b>Arena Setup</b> — Pick your domain, choose challengers,<br/>and ask any professional question</sub>
     </td>
     <td align="center" width="50%">
-      <img src="public/screenshots/ai-answers.png" alt="AI Answers — multiple LLMs respond simultaneously" /><br/>
-      <sub><b>AI Answers</b> — Multiple LLMs stream<br/>their responses side-by-side in real time</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="public/screenshots/expert-verification.png" alt="Expert Verification — licensed professional scores responses" /><br/>
-      <sub><b>Expert Verification</b> — A licensed professional<br/>reviews and scores every AI response via Pearl API</sub>
-    </td>
-    <td align="center" width="50%">
       <img src="public/screenshots/leaderboard.png" alt="Leaderboard — expert-judged rankings" /><br/>
       <sub><b>Leaderboard</b> — Live rankings based on<br/>expert-judged scores across all domains</sub>
     </td>
@@ -104,6 +94,15 @@ See [`src/lib/pearl-api.ts`](src/lib/pearl-api.ts) for the full implementation.
       <sub><b>Benchmarks</b> — Curated professional question<br/>suites vetted by licensed experts</sub>
     </td>
   </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="public/screenshots/ai-answers.png" alt="AI Answers — multiple LLMs respond simultaneously" /><br/>
+      <sub><b>AI Answers</b> — Multiple LLMs stream<br/>their responses side-by-side in real time</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="public/screenshots/expert-verification.png" alt="Expert Verification — licensed professional scores responses" /><br/>
+      <sub><b>Expert Verification</b> — A licensed professional<br/>reviews and scores every AI response via Pearl API</sub>
+    </td>
 </table>
 
 ---
@@ -167,7 +166,7 @@ const response = await fetch('https://api.pearl.com/api/v1/chat/completions', {
 });
 ```
 
-> **Get your API key** → [pearl.com/api](https://www.pearl.com/api)
+> **Get your API key** → [pearl.com/enterprise](https://www.pearl.com/enterprise)
 >
 > **Use the SDK instead** → [pearl-sdk](https://github.com/Pearl-com/pearl-sdk) (TypeScript & Python)
 
@@ -195,7 +194,7 @@ Open [http://localhost:3000](http://localhost:3000) and you're in the arena.
 
 The only key required to experience the core Pearl features is your **Pearl API key**:
 
-1. Sign up at [pearl.com/api](https://www.pearl.com/api) to get your key
+1. Sign up at [pearl.com/enterprise](https://www.pearl.com/enterprise) to get your key
 2. Set it as `VITE_PEARL_API_KEY` in a `.env` file, or enter it in the app's **Configure →** panel
 
 ```env
