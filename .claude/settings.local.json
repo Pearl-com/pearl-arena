@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Bash(npm --version)",
+      "Bash(yarn --version)",
+      "Bash(bun --version)",
+      "mcp__Claude_Preview__preview_start",
+      "Read(//usr/local/**)",
+      "Read(//usr/**)",
+      "Read(//c/Users/vitaliy.beketov/.nvm/versions/**)",
+      "Bash(node node_modules/typescript/bin/tsc --noEmit)",
+      "Bash(node node_modules/vite/bin/vite.js build)",
+      "WebFetch(domain:www.pearl.com)",
+      "Bash(gh api:*)",
+      "Bash(del \"C:\\\\src\\\\Pearl-com\\\\pearl-arena\\\\src\\\\lib\\\\pearl-mcp.ts\")",
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebFetch(domain:docs.perplexity.ai)",
+      "WebFetch(domain:console.groq.com)",
+      "WebFetch(domain:docs.mistral.ai)",
+      "WebFetch(domain:docs.cohere.com)",
+      "WebFetch(domain:docs.x.ai)",
+      "WebFetch(domain:api-docs.deepseek.com)",
+      "WebFetch(domain:developers.openai.com)",
+      "WebFetch(domain:openai.com)",
+      "Bash(grep -rn \"#0E0E1A\" *.tsx)",
+      "Bash(grep -rn 'bg-\\\\[#08080D\\\\]' *.tsx)",
+      "Bash(grep -rn 'bg-\\\\[#14141F\\\\]' *.tsx)",
+      "Bash(grep -rn 'bg-\\\\[#0F0F1A\\\\]' *.tsx)",
+      "Bash(grep -rn 'border-\\\\[#08080D\\\\]' *.tsx)",
+      "Bash(grep -rn '#08080D' *.tsx)",
+      "Bash(grep -rn '#14141F' *.tsx)",
+      "Bash(grep -rn '#0F0F1A' *.tsx)"
+    ]
+  }
+}

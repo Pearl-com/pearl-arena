@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/pearl-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pearl Arena — Expert-Judged LLM Benchmark</title>
+    <meta name="description" content="Pit top AI models against each other on real professional questions. Licensed experts judge every response. The only benchmark you can't game." />
+    <meta name="theme-color" content="#08080D" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pearl Arena — Expert-Judged LLM Benchmark" />
+    <meta property="og:description" content="The world's first AI benchmark judged by licensed professionals. Legal, Medical, Financial, Technical — real experts, real scores." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arena.pearl.com" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pearl Arena" />
+    <meta name="twitter:description" content="Expert-judged LLM benchmarks. Which AI actually gets it right?" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="antialiased">
+    <!-- Prevent flash of wrong theme — runs before React hydrates -->
+    <script>
+      (function(){
+        var t=localStorage.getItem('pearl-arena-theme');
+        if(!t) t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
+        document.documentElement.dataset.theme=t;
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

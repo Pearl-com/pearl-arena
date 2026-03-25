@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ─── Theme Tokens (RGB triplets for Tailwind alpha support) ─────────── */
+
+  :root {
+    /* Backgrounds — dark theme uses deep blue-blacks for depth layering */
+    --color-bg-primary: 10 10 18;         /* #0A0A12 — deepest layer */
+    --color-bg-surface: 16 16 28;         /* #10101C — raised surface */
+    --color-bg-card: 22 22 36;            /* #161624 — card, lifted above surface */
+    --color-bg-card-hover: 28 28 46;      /* #1C1C2E — card hover */
+
+    /* Text — wider spread for clear visual hierarchy */
+    --color-text-primary: 245 245 255;    /* #F5F5FF — near-white with cool tint */
+    --color-text-secondary: 190 190 215;  /* #BEBED7 — clearly lighter than muted */
+    --color-text-muted: 100 100 130;      /* #646482 — muted labels, captions */
+
+    /* Borders — solid subtle color, no opacity gymnastics needed for base state */
+    --color-border: 40 40 62;            /* #28283E — sits between card and card-hover */
+    /* Overlays (used for hover tints, glass, and translucent effects) */
+    --color-overlay: 255 255 255;
+
+    /* Shadows */
+    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md:  0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-lg:  0 4px 16px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-header: 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    /* Scrollbar */
+    --color-scrollbar: 255 255 255;
+
+    /* Recharts */
+    --color-chart-bg: 22 22 36;
+    --color-chart-text: 245 245 255;
+  }
+
+  [data-theme="light"] {
+    /* Backgrounds — light theme uses warm grays with clear card elevation */
+    --color-bg-primary: 245 246 250;      /* #F5F6FA — subtle cool-gray page */
+    --color-bg-surface: 238 239 245;      /* #EEEFF5 — raised surface */
+    --color-bg-card: 255 255 255;         /* white — cards pop against gray bg */
+    --color-bg-card-hover: 248 248 252;   /* #F8F8FC — gentle hover */
+
+    /* Text */
+    --color-text-primary: 15 20 35;       /* #0F1423 — near-black, not pure black */
+    --color-text-secondary: 60 65 85;     /* #3C4155 — mid-weight body text */
+    --color-text-muted: 120 125 145;      /* #787D91 — clearly softer than secondary */
+
+    /* Borders — clean gray that's visible without being heavy */
+    --color-border: 210 212 225;         /* #D2D4E1 — cool gray, full opacity for borders */
+    /* Overlays */
+    --color-overlay: 0 0 0;
+
+    /* Shadows — light mode uses softer, more diffuse shadows */
+    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.02);
+    --shadow-md:  0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-lg:  0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+    --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.03);
+
+    /* Scrollbar */
+    --color-scrollbar: 0 0 0;
+
+    /* Recharts */
+    --color-chart-bg: 255 255 255;
+    --color-chart-text: 15 20 35;
+  }
+
+  /* ─── Base Styles ────────────────────────────────────────────────────── */
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--color-bg-primary));
+    color: rgb(var(--color-text-secondary));
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(var(--color-scrollbar), 0.1);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--color-scrollbar), 0.2);
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(245, 200, 66, 0.25);
+    color: rgb(var(--color-text-primary));
+  }
+}
+
+@layer utilities {
+  /* Gradient radial utility */
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #F5C842 0%, #E8A817 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: rgba(var(--color-overlay), 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--color-border), 0.5);
+  }
+
+  /* Pearl glow effect */
+  .pearl-glow {
+    box-shadow: 0 0 20px rgba(245, 200, 66, 0.15), 0 0 60px rgba(245, 200, 66, 0.05);
+  }
+
+  /* Themed shadows */
+  .shadow-theme-sm  { box-shadow: var(--shadow-sm); }
+  .shadow-theme-md  { box-shadow: var(--shadow-md); }
+  .shadow-theme-lg  { box-shadow: var(--shadow-lg); }
+  .shadow-theme-header { box-shadow: var(--shadow-header); }
+
+  /* Animated underline */
+  .animated-underline {
+    position: relative;
+  }
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Recharts customizations */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: rgb(var(--color-chart-bg)) !important;
+  border: 1px solid rgb(var(--color-border)) !important;
+  border-radius: 12px !important;
+  color: rgb(var(--color-chart-text)) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: rgba(var(--color-chart-text), 0.35) !important;
+}
+
+.recharts-legend-item-text {
+  color: rgba(var(--color-chart-text), 0.5) !important;
+}
