@@ -22,7 +22,7 @@ export function Footer() {
           </div>
 
           <div className="text-xs text-theme-muted/40">
-            Powered by 12,000+ licensed experts · © 2025 Pearl
+            Powered by 13,000+ licensed experts · © 2026 Pearl
           </div>
         </div>
       </div>

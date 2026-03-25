@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useMemo } from 'react'
 import { MODELS, PEARL_MODEL, EXAMPLE_QUESTIONS, getModelProviderConfig } from '@/lib/constants'
 import type { DomainId } from '@/lib/constants'
-import type { ExpertJudgment } from '@/lib/types'
+import type { ExpertJudgment, ExpertScore } from '@/lib/types'
 import { DomainSelector } from '@/components/arena/DomainSelector'
 import { ModelSelector } from '@/components/arena/ModelSelector'
 import { ResponseCard } from '@/components/arena/ResponseCard'
@@ -13,7 +13,7 @@ import {
   buildModelSystemPrompt,
   buildPearlSystemPrompt,
   generateExpertJudgment,
-} from '@/lib/anthropic'
+} from '@/lib/expert-judgment'
 import {
   streamModelResponse,
   getConfiguredProviders,
